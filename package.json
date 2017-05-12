@@ -1,0 +1,33 @@
+{
+  "name": "passports-ticket-status",
+  "version": "1.0.0",
+  "description": "Ticket status monitor to join up gitlab, jenkins, and jira statuses into a single visualisation",
+  "main": "app.js",
+  "scripts": {
+    "test:unit": "mocha test/unit",
+    "test:lint": "eslint --ext .js --ext .jsx .",
+    "test": "npm run test:lint && npm run test:unit"
+  },
+  "author": "HMPO",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.3.0",
+    "body-parser": "^1.17.1",
+    "config": "^1.26.1",
+    "debug": "^2.6.6",
+    "express": "^4.15.2",
+    "express-react-views": "^0.10.2",
+    "hmpo-logger": "^3.0.0",
+    "js-yaml": "^3.8.3",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "mocha": "^3.4.1",
+    "sinon": "^2.2.0"
+  }
+}
