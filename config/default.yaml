@@ -1,0 +1,45 @@
+
+# override these defaults using a local.yaml file
+config:
+    port: 9002
+
+    logs:
+        # see hmpo-logger for config options
+
+    jenkins:
+    #    credentials: username:password
+        baseUrl: https://jenkins.example.com
+        projectFormat: build-{project:alpha}-snapshot
+        # promotion environments
+        environments:
+            - production
+            - preprod
+            - stage
+            - test
+            - integration
+
+
+    jira:
+    #    credentials: username:password
+        baseUrl: https://jira.example.com
+        statusMap:
+            'Open': develop
+            'Test': test
+            'Review': review
+            'Resolved': ready
+            'Closed': closed
+
+    gitlab:
+    #    privateToken: ABCDEFG1234567
+        ticketsInBody: false
+        baseUrl: https://gitlab.example.com
+        projectFormat: group-name/{project:alpha}
+
+        # only include projects with these tags in the project list
+        projectTags:
+            - BUILDSTATUS
+
+        # list of misspelt jira ticket prefixes to correct
+        ticketMatching:
+            BAD: GOOD
+
