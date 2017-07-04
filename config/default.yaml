@@ -9,6 +9,7 @@ config:
     jenkins:
     #    credentials: username:password
         baseUrl: https://jenkins.example.com
+        saveCache: true
         projectFormat: build-{project:alpha}-snapshot
         # promotion environments
         environments:
@@ -22,6 +23,7 @@ config:
     jira:
     #    credentials: username:password
         baseUrl: https://jira.example.com
+        saveCache: true
         statusMap:
             'Open': develop
             'Test': test
@@ -31,9 +33,10 @@ config:
 
     gitlab:
     #    privateToken: ABCDEFG1234567
-        ticketsInBody: false
         baseUrl: https://gitlab.example.com
+        saveCache: true
         projectFormat: group-name/{project:alpha}
+        ticketsInBody: false
 
         # only include projects with these tags in the project list
         projectTags:

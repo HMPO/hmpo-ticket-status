@@ -4,6 +4,7 @@
   "description": "Ticket status monitor to join up gitlab, jenkins, and jira statuses into a single visualisation",
   "main": "app.js",
   "scripts": {
+    "postinstall": "mkdir -p cache",
     "test:unit": "mocha test/unit",
     "test:lint": "eslint --ext .js --ext .jsx .",
     "test": "npm run test:lint && npm run test:unit"
