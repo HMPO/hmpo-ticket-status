@@ -36,3 +36,6 @@ dump.rdb
 
 # local configs
 config/local.*
+
+# cache
+cache
