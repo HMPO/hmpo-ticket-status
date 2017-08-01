@@ -30,7 +30,7 @@ class Main extends React.Component {
         return (
             <Layout title={this.props.project}>
                 <a className="header" href="/">{this.props.project}</a>
-                <Builds builds={builds} />
+                <Builds builds={builds} promotions={this.props.promotions} />
                 <Tickets tickets={this.props.tickets} updates={updates} buildIndexes={buildIndexes} />
             </Layout>
         );
