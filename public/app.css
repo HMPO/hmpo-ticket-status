@@ -67,6 +67,9 @@ a.update {
     margin-top: -2px;
     margin-right: 5px;
 }
+.env.rough {
+    border-style: dashed;
+}
 .env.int {
     color: #00D;
     border-color: #00D;

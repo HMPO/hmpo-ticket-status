@@ -8,7 +8,7 @@ class Builds extends React.Component {
         return (
             <div className="builds">
                 {this.props.builds.map(
-                    (build, index) => <Build key={build.id} build={build} top={index} />)}
+                    (build, index) => <Build key={build.id} build={build} promotions={this.props.promotions} top={index} />)}
             </div>
         );
     }

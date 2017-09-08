@@ -11,9 +11,9 @@ class Build extends BuildStatus {
 
         let promotions = [];
 
-        if (this.props.build.promotions) {
+        if (this.props.promotions) {
             let environments = config.get('jenkins.environments');
-            promotions = environments.map(envName => this.props.build.promotions[envName]).filter(Boolean);
+            promotions = environments.map(envName => this.props.promotions[envName]).filter(promotion => promotion && promotion.buildId === this.props.build.id);
         }
 
         let style = {
