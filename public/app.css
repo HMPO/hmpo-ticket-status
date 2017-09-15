@@ -82,7 +82,7 @@ a.update {
     color: #990;
     border-color: #990;
 }
-.env.prd_aws {
+.env.prd {
     color: #D00;
     border-color: #D00;
 }
