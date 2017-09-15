@@ -4,6 +4,7 @@ const React = require('react');
 const BuildStatus = require('./build-status');
 const Promotion = require('./promotion');
 const config = require('../lib/config');
+const _ = require('lodash');
 
 class Build extends BuildStatus {
     render() {
@@ -12,8 +13,14 @@ class Build extends BuildStatus {
         let promotions = [];
 
         if (this.props.promotions) {
-            let environments = config.get('jenkins.environments');
-            promotions = environments.map(envName => this.props.promotions[envName]).filter(promotion => promotion && promotion.buildId === this.props.build.id);
+            let environments = _.uniq(_.concat(
+                [],
+                Object.values(config.get('jenkinsPromote.environments')),
+                Object.values(config.get('jenkins.environments'))
+            ));
+            promotions = environments
+                .map(envName => this.props.promotions[envName])
+                .filter(promotion => promotion && promotion.buildId === this.props.build.id);
         }
 
         let style = {

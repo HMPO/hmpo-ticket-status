@@ -13,12 +13,19 @@ config:
         projectFormat: build-{project:alpha}-snapshot
         # promotion environments
         environments:
-            - production
-            - preprod
-            - stage
-            - test
-            - integration
+            stg: stg
+            sit: sit
+            int: int
 
+    jenkinsPromote:
+    #    credentials: username:password
+        baseUrl: https://jenkins.example.com
+        saveCache: true
+        projectFormat: build-{project:alpha}-snapshot.yml
+        promoteJob: promote
+        # promotion environments
+        environments:
+            prd: prd
 
     jira:
     #    credentials: username:password
