@@ -10,9 +10,10 @@ config:
     #    credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: true
-        projectFormat: build-{project:alpha}-snapshot
+        projectFormat: '{project:alpha}'
         # promotion environments
         environments:
+            prd_aws: prd
             stg: stg
             sit: sit
             int: int
@@ -21,7 +22,7 @@ config:
     #    credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: true
-        projectFormat: build-{project:alpha}-snapshot.yml
+        projectFormat: '{project:alpha}.yml'
         promoteJob: promote
         # promotion environments
         environments:
