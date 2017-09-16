@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "postinstall": "mkdir -p cache",
-    "test:unit": "mocha test/unit",
+    "test:unit": "jest test/unit",
     "test:lint": "eslint --ext .js --ext .jsx .",
     "test": "npm run test:lint && npm run test:unit"
   },
@@ -22,13 +22,28 @@
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-string": "^1.4.0",
+    "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.1",
-    "mocha": "^3.4.1",
-    "sinon": "^2.2.0"
+    "jest": "^21.0.2",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^2.2.0",
+    "wallaby-webpack": "0.0.40",
+    "webpack": "^3.6.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testRegex": "/test/unit/.*/spec.*\\.jsx?$",
+    "collectCoverage": true,
+    "coverageDirectory": "reports/coverage"
   }
 }
