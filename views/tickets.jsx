@@ -50,7 +50,7 @@ class Tickets extends React.Component {
     }
 
     render() {
-        let tickets = Object.values(this.props.tickets);
+        let tickets = _.values(this.props.tickets);
 
         // sort tickets by smallest first and then by name
         tickets = _.sortBy(tickets, 'id');

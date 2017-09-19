@@ -4,11 +4,12 @@ const React = require('react');
 const Layout = require('./layout');
 const Builds = require('./builds');
 const Tickets = require('./tickets');
+const _ = require('lodash');
 
 class Main extends React.Component {
     render() {
         // sort builds
-        let builds = Object.values(this.props.builds)
+        let builds = _.values(this.props.builds)
             .sort( (a, b) => b.id === 'HEAD' ? 1 : b.id - a.id );
 
         // collect build indexes
