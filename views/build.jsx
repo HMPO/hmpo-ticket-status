@@ -15,8 +15,8 @@ class Build extends BuildStatus {
         if (this.props.promotions) {
             let environments = _.uniq(_.concat(
                 [],
-                Object.values(config.get('jenkinsPromote.environments')),
-                Object.values(config.get('jenkins.environments'))
+                _.values(config.get('jenkinsPromote.environments')),
+                _.values(config.get('jenkins.environments'))
             ));
             promotions = environments
                 .map(envName => this.props.promotions[envName])
