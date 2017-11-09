@@ -67,6 +67,9 @@ a.update {
     margin-top: -2px;
     margin-right: 5px;
 }
+.env.promote {
+    border-style: dotted;
+}
 .env.rough {
     border-style: dashed;
 }

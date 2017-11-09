@@ -3,6 +3,7 @@
 const React = require('react');
 const BuildStatus = require('./build-status');
 const Promotion = require('./promotion');
+const PromoteLink = require('./promote-link');
 const config = require('../lib/config');
 const _ = require('lodash');
 
@@ -36,6 +37,7 @@ class Build extends BuildStatus {
                     target={'build-' + this.props.build.id}
                     href={this.props.build.link}>{name}</a>
                 <span className="date">{this.formatDate(this.props.build.date)}</span>
+                {this.props.build.promoteLink ? <PromoteLink env="prd" link={this.props.build.promoteLink} /> : null}
                 {promotions.map((promotion, index) => <Promotion key={index} promotion={promotion} />)}
             </div>
         );
