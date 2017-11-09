@@ -4,6 +4,7 @@ const React = require('react');
 const Layout = require('./layout');
 const Builds = require('./builds');
 const Tickets = require('./tickets');
+const MoreLink = require('./more');
 const _ = require('lodash');
 
 class Main extends React.Component {
@@ -33,6 +34,7 @@ class Main extends React.Component {
                 <a className="header" href="/">{this.props.project}</a>
                 <Builds builds={builds} promotions={this.props.promotions} />
                 <Tickets tickets={this.props.tickets} updates={updates} buildIndexes={buildIndexes} />
+                <MoreLink options={this.props.options} />
             </Layout>
         );
     }

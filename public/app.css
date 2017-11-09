@@ -25,6 +25,19 @@ p {
     margin-bottom: 10px;
 }
 
+.more {
+    display: inline;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 5px 1px 5px;
+    border: solid 2px;
+    margin-top: -2px;
+    margin-right: 5px;
+    color: #00D;
+    border-color: #00D;
+}
+
 .header {
     font-family: bold;
     font-size: 30px;
