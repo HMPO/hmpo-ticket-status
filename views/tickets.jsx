@@ -63,8 +63,8 @@ class Tickets extends React.Component {
                 { tickets.map(ticket => {
                     let TicketType = (ticket.status === 'NOJIRA') ? CommitTicket : JiraTicket;
 
-                    let top = this.props.buildIndexes[_.last(ticket.builds)] || 0;
-                    let bottom = this.props.buildIndexes[_.first(ticket.builds)] || 0;
+                    let top = this.getTop(ticket);
+                    let bottom = this.getBottom(ticket);
                     let left = this.nextAvailableBlock(cells, top, bottom);
                     this.makeCellsUnavailable(cells, left, top, bottom, ticket.id);
 
