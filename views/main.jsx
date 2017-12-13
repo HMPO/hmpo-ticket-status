@@ -6,12 +6,12 @@ const Builds = require('./builds');
 const Tickets = require('./tickets');
 const MoreLink = require('./more');
 const _ = require('lodash');
+const sortBuilds = require('../lib/sortbuilds');
 
 class Main extends React.Component {
     render() {
         // sort builds
-        let builds = _.values(this.props.builds)
-            .sort( (a, b) => b.id === 'HEAD' ? 1 : b.id - a.id );
+        let builds = _.values(this.props.builds).sort(sortBuilds).reverse();
 
         // collect build indexes
         let buildIndexes = {};

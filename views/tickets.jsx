@@ -46,7 +46,7 @@ class Tickets extends React.Component {
     }
 
     getHeight(ticket) {
-        return this.getTop(ticket) - this.getBottom(ticket);
+        return Math.max(this.getTop(ticket) - this.getBottom(ticket), 0);
     }
 
     render() {
