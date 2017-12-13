@@ -19,10 +19,11 @@ class Ticket extends BuildStatus {
     }
 
     buildStyle() {
+        let height = Math.max(this.Y(this.props.bottom) - this.Y(this.props.top), 0) + 12;
         return {
             top: this.Y(this.props.top),
             left: this.X(this.props.left),
-            height: this.Y(this.props.bottom) - this.Y(this.props.top) + 12
+            height
         };
     }
 }
