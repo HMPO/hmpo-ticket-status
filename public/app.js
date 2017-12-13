@@ -33,12 +33,10 @@ window.addEventListener('load', function () {
 
     addHighlight('highlight');
 
-    var els = document.querySelectorAll && document.querySelectorAll('.build a');
-    for (var i = 0; els && i < els.length; i++) {
-        var el = els[i];
-        el.addEventListener('click', function (e) {
-            if (e.target.name) window.location.hash = e.target.name;
-        });
-    }
+    document.addEventListener('click', function (e) {
+        let target = e.target.name || e.target.id || e.target.tagName;
+        if (target && target.match(/^build-/)) window.location.hash = target;
+        if (target === 'HTML') window.location.hash = '';
+    });
 });
 
