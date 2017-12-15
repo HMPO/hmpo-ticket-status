@@ -7,7 +7,7 @@ class PromoteLink extends Buildstatus {
     render() {
         return (
             <div className={'promote env ' + this.props.env}>
-                <a href={this.props.link}>Promote to {this.props.env}</a>
+                <a target={'promote-' + this.props.env} href={this.props.link}>Promote to {this.props.env}</a>
             </div>
         );
     }
