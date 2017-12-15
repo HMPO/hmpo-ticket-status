@@ -24,6 +24,7 @@ config:
         saveCache: true
         projectFormat: '{project:alpha}.yml'
         promoteJob: promote
+        promoteLinkArgs: 'PROMOTED_JOB_NAME={project}.yml&ENVIRONMENT={environment}&PROMOTED_NUMBER={buildId}'
         # promotion environments
         environments:
             prd: prd
