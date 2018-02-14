@@ -1,0 +1,17 @@
+'use strict';
+
+const React = require('react');
+const Build = require('./build');
+
+class Builds extends React.Component {
+    render() {
+        return (
+            <div className="builds">
+                {this.props.builds.map(
+                    (build, index) => <Build key={build.id} build={build} promotions={this.props.promotions} top={index} selected={this.props.selectedBuild == build.id} />)}
+            </div>
+        );
+    }
+}
+
+module.exports = Builds;

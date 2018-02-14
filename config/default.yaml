@@ -7,7 +7,6 @@ config:
         # see hmpo-logger for config options
 
     jenkins:
-    #    credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: true
         projectFormat: '{project:alpha}'
@@ -19,7 +18,6 @@ config:
             int: int
 
     jenkinsPromote:
-    #    credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: true
         projectFormat: '{project:alpha}.yml'
@@ -30,7 +28,6 @@ config:
             prd: prd
 
     jira:
-    #    credentials: username:password
         baseUrl: https://jira.example.com
         saveCache: true
         statusMap:
@@ -41,7 +38,6 @@ config:
             'Closed': closed
 
     gitlab:
-    #    privateToken: ABCDEFG1234567
         baseUrl: https://gitlab.example.com
         saveCache: true
         projectFormat: group-name/{project:alpha}

@@ -36,6 +36,10 @@ dump.rdb
 
 # local configs
 config/local.*
+config/index.json
 
 # cache
 cache
+
+dist/*
+
