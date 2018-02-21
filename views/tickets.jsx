@@ -38,11 +38,11 @@ class Tickets extends React.Component {
     }
 
     getTop(ticket) {
-        return this.props.buildIndexes[_.last(ticket.builds)] || 0;
+        return this.props.releaseIndexes[_.first(ticket.releases)] || 0;
     }
 
     getBottom(ticket) {
-        return this.props.buildIndexes[_.first(ticket.builds)] || 0;
+        return this.props.releaseIndexes[_.last(ticket.releases)] || 0;
     }
 
     getHeight(ticket) {
@@ -78,7 +78,7 @@ class Tickets extends React.Component {
                             <Merges
                                 merges={ticket.merges}
                                 left={left}
-                                buildIndexes={this.props.buildIndexes} />
+                                releaseIndexes={this.props.releaseIndexes} />
                         </div>
                     );
                 }) }
@@ -86,7 +86,7 @@ class Tickets extends React.Component {
                     let left = this.lastCellInRow(cells, update.top);
                     return (
                         <UpdatesTicket
-                            key={update.buildId}
+                            key={update.releaseId}
                             updates={update.updates}
                             top={update.top}
                             bottom={update.top}

@@ -3,17 +3,17 @@
 const React = require('react');
 
 const dimensions = {
-    buildOffset: 50,
-    buildHeight: 30,
+    releaseOffset: 50,
+    releaseHeight: 30,
     ticketWidth: 190
 };
 
 const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-class BuildStatus extends React.Component {
+class ReleaseStatus extends React.Component {
 
     Y(y) {
-        return dimensions.buildOffset + (y * dimensions.buildHeight);
+        return dimensions.releaseOffset + (y * dimensions.releaseHeight);
     }
 
     X(x) {
@@ -42,4 +42,4 @@ class BuildStatus extends React.Component {
     }
 }
 
-module.exports = BuildStatus;
+module.exports = ReleaseStatus;
