@@ -1,9 +1,9 @@
 'use strict';
 
 const React = require('react');
-const BuildStatus = require('./build-status');
+const ReleaseStatus = require('./release-status');
 
-class Merge extends BuildStatus {
+class Merge extends ReleaseStatus {
     render() {
         let style = {
             top: this.Y(this.props.top),

@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
 
     document.addEventListener('click', function (e) {
         let target = e.target.name || e.target.id || e.target.tagName;
-        if (target && target.match(/^build-/)) window.location.hash = target;
+        if (target && target.match(/^release-/)) window.location.hash = target;
         if (target === 'HTML') window.location.hash = '';
     });
 });

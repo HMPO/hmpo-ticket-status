@@ -1,19 +1,19 @@
 'use strict';
 
 const React = require('react');
-const BuildStatus = require('./build-status');
+const ReleaseStatus = require('./release-status');
 const Merge = require('./merge');
 
-class Merges extends BuildStatus {
+class Merges extends ReleaseStatus {
     render() {
-        let mergeBuilds = Object.keys(this.props.merges);
+        let mergeReleases = Object.keys(this.props.merges);
         return (
             <div>
-                { mergeBuilds.map(buildId => <Merge
-                    key={buildId}
-                    merge={this.props.merges[buildId]}
+                { mergeReleases.map(releaseId => <Merge
+                    key={releaseId}
+                    merge={this.props.merges[releaseId]}
                     left={this.props.left}
-                    top={this.props.buildIndexes[buildId]} />) }
+                    top={this.props.releaseIndexes[releaseId]} />) }
             </div>
         );
     }

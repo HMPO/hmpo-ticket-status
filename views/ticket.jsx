@@ -1,10 +1,10 @@
 'use strict';
 
-const BuildStatus = require('./build-status');
+const ReleaseStatus = require('./release-status');
 const _ = require('lodash');
 const config = require('../lib/config');
 
-class Ticket extends BuildStatus {
+class Ticket extends ReleaseStatus {
     commits() {
         return _.uniq(_.map(this.props.ticket.commits, commit => {
             return commit.title + '\n' +
