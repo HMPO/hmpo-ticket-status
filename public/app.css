@@ -71,6 +71,34 @@ a.update {
     background-color: rgba(220,220,220,0.7);
 }
 
+.build {
+    display: inline;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: solid 1px #666;
+    margin-top: -4px;
+    margin-right: 5px;
+    min-height: 18px;
+    background-color: white;
+    color: #666;
+}
+.build.success {
+    border: solid 1px #444;
+    background-color: #EEE;
+    color: black;
+}
+.build:hover {
+    border-color: black;
+}
+
+.build a {
+    float: right;
+}
+
 .env {
     display: inline;
     float: right;
@@ -78,7 +106,8 @@ a.update {
     font-weight: bold;
     padding: 1px 5px 1px 5px;
     border: solid 2px;
-    margin-top: -2px;
+    margin-top: -3px;
+    margin-left: -3px;
     margin-right: 5px;
 }
 .env.promote {
@@ -112,17 +141,7 @@ a.update {
     border: solid 1px #CCC;
     height: 16px;
     overflow: hidden;
-    background-color: #F00;
-}
-.release.missing {
-    background-color: #EEE;
-    color: #888;
-}
-.release.success {
     background-color: white;
-}
-.release.failure {
-    background-color: #F89;
 }
 .release:hover {
     border-color: black;
@@ -131,7 +150,7 @@ a.update {
 .tickets {
     position: absolute;
     top: 0px;
-    left: 110px;
+    left: 170px;
     right: 100px;
 }
 
