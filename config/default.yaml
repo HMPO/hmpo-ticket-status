@@ -7,30 +7,40 @@ config:
         # see hmpo-logger for config options
 
     jenkins:
-    #    credentials: username:password
+        # credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: false
         projectFormat: '{project:alpha}'
-        # promotion environments
+        ## promotion environments
         environments:
-            prd_aws: prd
+            stg: stg
+            sit: sit
+            int: int
+
+    jenkinsOld:
+        # credentials: username:password
+        baseUrl: https://jenkins.example.com
+        saveCache: false
+        projectFormat: '{project:alpha}'
+        ## promotion environments
+        environments:
             stg: stg
             sit: sit
             int: int
 
     jenkinsPromote:
-    #    credentials: username:password
+        # credentials: username:password
         baseUrl: https://jenkins.example.com
         saveCache: false
         projectFormat: '{project:alpha}.yml'
         promoteJob: promote
         promoteLinkArgs: 'PROMOTED_JOB_NAME={project}.yml&ENVIRONMENT={environment}&PROMOTED_NUMBER={releaseId}'
-        # promotion environments
+        ## promotion environments
         environments:
             prd: prd
 
     jira:
-    #    credentials: username:password
+        # credentials: username:password
         baseUrl: https://jira.example.com
         saveCache: true
         statusMap:
@@ -41,17 +51,17 @@ config:
             'Closed': closed
 
     gitlab:
-    #    privateToken: ABCDEFG1234567
+        # privateToken: ABCDEFG1234567
         baseUrl: https://gitlab.example.com
         saveCache: true
         projectFormat: group-name/{project:alpha}
         ticketsInBody: false
 
-        # only include projects with these tags in the project list
+        ## only include projects with these tags in the project list
         projectTags:
             - BUILDSTATUS
 
-        # list of misspelt jira ticket prefixes to correct
+        ## list of misspelt jira ticket prefixes to correct
         ticketMatching:
             BAD: GOOD
 
