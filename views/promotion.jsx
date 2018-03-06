@@ -6,9 +6,11 @@ const ReleaseStatus = require('./release-status');
 class Promotion extends ReleaseStatus {
     render() {
         return (
-            <div className={'env ' + this.props.promotion.env + (this.props.promotion.rough ? ' rough': '')}
+            <a href={this.props.promotion.link}
+                target={'build-' + this.props.promotion.buildId}
+                className={'env ' + this.props.promotion.env + (this.props.promotion.rough ? ' rough': '')}
                 title={this.formatDate(this.props.promotion.timestamp)}>
-                    {this.props.promotion.env}</div>
+                    {this.props.promotion.env}</a>
         );
     }
 }
