@@ -33,6 +33,8 @@ module.exports = function (configData) {
 
     let port = config.get('port');
     app.listen(port, () => logger.info('Server started on port :port', { port }));
+
+    return app;
 };
 
 if (require.main === module) module.exports();
