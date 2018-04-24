@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (configData) {
+module.exports = function (configData, app) {
     const config = require('./lib/config');
     config.reset(configData);
 
@@ -15,8 +15,7 @@ module.exports = function (configData) {
         project: require('./routes/project')
     };
 
-
-    let app = express();
+    app = app || express();
 
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jsx');
