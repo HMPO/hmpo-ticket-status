@@ -23,6 +23,13 @@ class Login extends React.Component {
                                 <p>Password: <input type="password" name="jenkins_password"/></p>
                             </div>
                         ) : null }
+                        { this.props.oldJenkins ? (
+                            <div>
+                                <p>Old Jenkins Credentials</p>
+                                <p>Username: <input type="text" name="old_jenkins_username" autoComplete="old_jenkins_username"/></p>
+                                <p>Password: <input type="password" name="old_jenkins_password"/></p>
+                            </div>
+                        ) : null }
                         { this.props.jenkinsPromote ? (
                             <div>
                                 <p>Jenkins Promote Credentials</p>

@@ -25,6 +25,13 @@ module.exports = {
             );
         }
 
+        if (req.body.old_jenkins_username && req.body.old_jenkins_password) {
+            config.set(
+                'oldJenkins.credentials',
+                req.body.old_jenkins_username + ':' + req.body.old_jenkins_password
+            );
+        }
+
         if (req.body.jenkins_promote_username && req.body.jenkins_promote_password) {
             config.set(
                 'jenkinsPromote.credentials',
@@ -48,7 +55,8 @@ module.exports = {
         let missingCredentials = {
             jira: !config.get('jira.credentials'),
             jenkins: !config.get('jenkins.credentials'),
-            jenkinsPromote: !config.get('jenkinsPromote.credentials'),
+            oldJenkins: !config.get('oldJenkins.credentials') === false,
+            jenkinsPromote: config.get('jenkinsPromote.credentials') === false,
             gitlab: !config.get('gitlab.privateToken')
         };
         if (_.some(missingCredentials)) {
