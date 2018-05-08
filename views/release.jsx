@@ -14,7 +14,7 @@ class Release extends ReleaseStatus {
 
         return (
             <div id={'release-' + this.props.release.id} className={'release'} style={style}>
-                <a name={'release-' + this.props.release.id} title={this.props.release.ids && this.props.release.ids.join(' ')}>{name}</a>
+                <a title={this.props.release.ids && this.props.release.ids.join(' ')}>{name}</a>
                 <span className="date">{this.formatDate(this.props.release.date)}</span>
                 {this.props.release.builds && this.props.release.builds.map((build, index) => <Build key={index} build={build} promotions={this.props.promotions} />)}
             </div>
