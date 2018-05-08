@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
 
     function addHighlight(className) {
         var hash = window.location.hash.substr(1);
-        addClass(hash, className);
+        addClass('release-' + hash, className);
     }
 
     window.addEventListener('hashchange', function () {
@@ -34,8 +34,8 @@ window.addEventListener('load', function () {
     addHighlight('highlight');
 
     document.addEventListener('click', function (e) {
-        let target = e.target.name || e.target.id || e.target.tagName;
-        if (target && target.match(/^release-/)) window.location.hash = target;
+        let target = e.target.id || (e.target.parentNode && e.target.parentNode.id) || e.target.tagName;
+        if (target && target.match(/^release-/)) window.location.hash = target.substr(8);
         if (target === 'HTML') window.location.hash = '';
     });
 });
