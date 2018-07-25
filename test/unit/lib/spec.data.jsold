@@ -1,0 +1,38 @@
+// 'use strict';
+//
+// describe.skip('Top level describe', () => {
+//     beforeEach(() => {
+//         console.log('BEFOREEACH 1');
+//     });
+//
+//
+//     test.only('the only running test', () => {   // ONLY THIS TEST SHOULD RUN
+//         console.log('ONLY TEST');
+//         expect(true);
+//     });
+//
+//     describe('once nested describe', () => {
+//         let bar;
+//
+//         beforeEach(() => {
+//             console.log('BEFOREEACH 2');
+//             bar = {};
+//         });
+//
+//         describe('twice nested describe', () => {
+//             let foo;
+//
+//             beforeAll(() => {
+//             // beforeEach(() => {
+//                 console.log('BEFOREALL');
+//                 foo = bar;
+//                 foo.x;                                 // Will produce a syntax error
+//             });
+//
+//             test('the skipped test', () => {        // Will be listed as a failed test even though it's skipped
+//                 console.log('SKIPPED TEST');
+//                 expect(false);
+//             });
+//         });
+//     });
+// });
