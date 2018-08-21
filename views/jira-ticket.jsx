@@ -12,7 +12,9 @@ class JiraTicket extends Ticket {
             ticket.id + '\n\n' +
             ticket.title + '\n\n' +
             '[' + ticket.status + ']\n\n' +
-            this.commits().join('\n\n');
+            this.commits().join('\n\n')  + '\n\n' +
+            'Projects:\n' +
+            ticket.projects.sort().map(project => '- ' + project + '\n');
 
         let parentTitle;
         if (parent) {
