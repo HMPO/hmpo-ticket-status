@@ -11,5 +11,12 @@
     "rules": {
         "react/prop-types": "off",
         "react/jsx-no-target-blank": "off"
+    },
+    "settings": {
+        "react": {
+            "createClass": "createReactClass",
+            "pragma": "React",
+            "version": "15.0"
+        }
     }
 }
