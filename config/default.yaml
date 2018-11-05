@@ -6,21 +6,14 @@ config:
     logs:
         # see hmpo-logger for config options
 
+    all:
+        redis:
+            # see node-redis for config options
+        saveCache: false
+
     jenkins:
         # credentials: username:password
         baseUrl: https://jenkins.example.com
-        saveCache: false
-        projectFormat: '{project:alpha}'
-        ## promotion environments
-        environments:
-            stg: stg
-            sit: sit
-            int: int
-
-    jenkinsOld:
-        # credentials: username:password
-        baseUrl: https://jenkins.example.com
-        saveCache: false
         projectFormat: '{project:alpha}'
         ## promotion environments
         environments:
@@ -31,7 +24,6 @@ config:
     jenkinsPromote:
         # credentials: username:password
         baseUrl: https://jenkins.example.com
-        saveCache: false
         projectFormat: '{project:alpha}.yml'
         promoteJob: promote
         promoteLinkArgs: 'PROMOTED_JOB_NAME={project}.yml&ENVIRONMENT={environment}&PROMOTED_NUMBER={buildId}'
