@@ -24,7 +24,7 @@ class Tickets extends React.Component {
     }
 
     lastCellInRow(cells, y) {
-        var lastX = 0;
+        let lastX = 0;
         for (let x = cells.length; x >= 0; x--) {
             if (cells[x] && cells[x][y]) break;
             lastX = x;
@@ -91,7 +91,7 @@ class Tickets extends React.Component {
                             top={update.top}
                             bottom={update.top}
                             left={left} />
-                        );
+                    );
                 })}
             </div>
         );

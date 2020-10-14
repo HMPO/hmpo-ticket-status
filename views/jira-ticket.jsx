@@ -30,9 +30,9 @@ class JiraTicket extends Ticket {
             <div className={'ticket ' + this.className(ticket)} style={this.buildStyle()} title={title}>
                 <p><a target={'ticket-' + ticket.id} href={ticket.link}>{ticket.id}</a>
                     { parent ? (
-                       <span className={'parent ' + this.className(parent)} title={parentTitle}>
+                        <span className={'parent ' + this.className(parent)} title={parentTitle}>
                             <a target={'ticket-' + parent.key} href={parent.link}>{parent.key}</a>
-                       </span>
+                        </span>
                     ) : null }
                 </p>
                 <p>{ticket.title}</p>

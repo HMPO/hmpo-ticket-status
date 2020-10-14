@@ -10,7 +10,7 @@ class Promotion extends ReleaseStatus {
                 target={'build-' + this.props.promotion.buildId}
                 className={'env ' + this.props.promotion.env + (this.props.promotion.rough ? ' rough': '')}
                 title={this.formatDate(this.props.promotion.timestamp)}>
-                    {this.props.promotion.env}</a>
+                {this.props.promotion.env}</a>
         );
     }
 }

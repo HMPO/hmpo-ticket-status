@@ -13,7 +13,7 @@ class Ticket extends ReleaseStatus {
     }
 
     className(ticket) {
-        if (ticket.status === 'NOJIRA') return 'nojira'
+        if (ticket.status === 'NOJIRA') return 'nojira';
         let classNames = config.get('jira.statusMap');
         return classNames[ticket.status] || 'unknown';
     }

@@ -8,7 +8,7 @@ class Update extends React.Component {
             <a className="update"
                 href={'/' + this.props.update.module + '#release-' + this.props.update.version}
                 target={'module-' + this.props.update.module}
-                >⟰ {this.props.update.module} {this.props.update.version}</a>
+            >⟰ {this.props.update.module} {this.props.update.version}</a>
         );
     }
 }
