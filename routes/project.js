@@ -7,10 +7,14 @@ module.exports = {
         let options = {
             count: parseInt(req.query.count, 10) || 100
         };
-        const project = req.path.replace(/^\/+|\/+$/g, '');
-        data.get().getData(project, options, (err, data) => {
+        const project = req.path.toLowerCase().replace(/^\/+|\/+$/g, '');
+        data.get().getData(project, options, (err, props) => {
             if (err) return next(err);
-            res.render('main', data);
+            if (!props.releases.length) {
+                return res.render('notfound', props);
+            }
+            data.addProject(project);
+            res.render('main', props);
         });
     }
 };
