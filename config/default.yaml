@@ -5,55 +5,12 @@ config:
 
     logs:
         # see hmpo-logger for config options
+        app: false
+        error: false
+        console: true
 
-    all:
-        redis:
-            # see node-redis for config options
-        saveCache: false
-
-    jenkins:
-        # credentials: username:password
-        baseUrl: https://jenkins.example.com
-        projectFormat: '{project:alpha}'
-        ## promotion environments
-        environments:
-            stg: stg
-            sit: sit
-            int: int
-
-    jenkinsPromote:
-        # credentials: username:password
-        baseUrl: https://jenkins.example.com
-        projectFormat: '{project:alpha}.yml'
-        promoteJob: promote
-        promoteLinkArgs: 'PROMOTED_JOB_NAME={project}.yml&ENVIRONMENT={environment}&PROMOTED_NUMBER={buildId}'
-        ## promotion environments
-        environments:
-            prd: prd
-
-    jira:
-        # credentials: username:password
-        baseUrl: https://jira.example.com
-        saveCache: true
-        statusMap:
-            'Open': develop
-            'Test': test
-            'Review': review
-            'Resolved': ready
-            'Closed': closed
-
-    gitlab:
-        # privateToken: ABCDEFG1234567
-        baseUrl: https://gitlab.example.com
-        saveCache: true
-        projectFormat: group-name/{project:alpha}
-        ticketsInBody: false
-
-        ## only include projects with these tags in the project list
-        projectTags:
-            - BUILDSTATUS
-
-        ## list of misspelt jira ticket prefixes to correct
-        ticketMatching:
-            BAD: GOOD
-
+    engines:
+        all:
+            redisCache:
+                # see node-redis for config options
+            saveCache: false

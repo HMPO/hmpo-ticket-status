@@ -2,7 +2,7 @@
 
 const React = require('react');
 const Merges = require('./merges');
-const JiraTicket = require('./jira-ticket');
+const IssueTicket = require('./issue-ticket');
 const CommitTicket = require('./commit-ticket');
 const UpdatesTicket = require('./updates-ticket');
 const _ = require('lodash');
@@ -61,7 +61,7 @@ class Tickets extends React.Component {
         return (
             <div className="tickets">
                 { tickets.map(ticket => {
-                    let TicketType = (ticket.status === 'NOJIRA') ? CommitTicket : JiraTicket;
+                    let TicketType = (ticket.status === 'NOTICKET') ? CommitTicket : IssueTicket;
 
                     let top = this.getTop(ticket);
                     let bottom = this.getBottom(ticket);

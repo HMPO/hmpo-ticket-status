@@ -8,7 +8,7 @@ class CommitTicket extends Ticket {
         let title = this.props.ticket.title + '\n\n' + this.commits().join('\n\n');
 
         return (
-            <div className="ticket nojira" style={this.buildStyle()} title={title}>
+            <div className="ticket noticket" style={this.buildStyle()} title={title}>
                 <span>⚐ {this.props.ticket.title}</span>
             </div>
         );

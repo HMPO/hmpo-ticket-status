@@ -2,7 +2,6 @@
 
 const ReleaseStatus = require('./release-status');
 const _ = require('lodash');
-const config = require('../lib/config');
 
 class Ticket extends ReleaseStatus {
     commits() {
@@ -13,9 +12,8 @@ class Ticket extends ReleaseStatus {
     }
 
     className(ticket) {
-        if (ticket.status === 'NOJIRA') return 'nojira';
-        let classNames = config.get('jira.statusMap');
-        return classNames[ticket.status] || 'unknown';
+        if (ticket.status === 'NOTICKET') return 'noticket';
+        return ticket.statusClass || 'unknown';
     }
 
     buildStyle() {
