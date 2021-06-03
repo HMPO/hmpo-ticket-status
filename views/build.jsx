@@ -4,8 +4,6 @@ const React = require('react');
 const ReleaseStatus = require('./release-status');
 const Promotion = require('./promotion');
 const PromoteLink = require('./promote-link');
-const config = require('../lib/config');
-const _ = require('lodash');
 
 class Build extends ReleaseStatus {
     render() {
@@ -14,11 +12,7 @@ class Build extends ReleaseStatus {
         let promotions = [];
 
         if (this.props.promotions) {
-            let environments = _.uniq(_.concat(
-                [],
-                _.values(config.get('jenkinsPromote.environments')),
-                _.values(config.get('jenkins.environments'))
-            ));
+            let environments = Object.keys(this.props.promotions);
             promotions = environments
                 .map(envName => this.props.promotions[envName])
                 .filter(promotion => promotion && promotion.buildId === this.props.build.id);

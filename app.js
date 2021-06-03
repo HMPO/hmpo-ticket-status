@@ -11,7 +11,6 @@ module.exports = function (configData, app) {
 
     const routes = {
         auth: require('./routes/auth'),
-        list: require('./routes/list'),
         project: require('./routes/project')
     };
 
@@ -25,10 +24,10 @@ module.exports = function (configData, app) {
     app.use(hmpoLogger.middleware());
 
     app.get('/reset', routes.auth.reset);
-    app.post('/*', bodyParser.urlencoded({extended: true}), routes.auth.login);
-    app.use(routes.auth.checkCredentials);
-    app.get('/', routes.list.get);
-    app.get('/:project', routes.project.get);
+    app.get('*', routes.auth.checkCredentials);
+    app.post('*', bodyParser.urlencoded({extended: true}), routes.auth.login);
+
+    app.get('*', routes.project.get);
 
     let port = config.get('port');
     app.listen(port, () => logger.info('Server started on port :port', { port }));

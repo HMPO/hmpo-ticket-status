@@ -7,7 +7,8 @@ module.exports = {
         let options = {
             count: parseInt(req.query.count, 10) || 100
         };
-        data.get().getData(req.params.project, options, (err, data) => {
+        const project = req.path.replace(/^\/+|\/+$/g, '');
+        data.get().getData(project, options, (err, data) => {
             if (err) return next(err);
             res.render('main', data);
         });

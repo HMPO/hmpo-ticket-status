@@ -3,7 +3,7 @@
 const React = require('react');
 const Ticket = require('./ticket');
 
-class JiraTicket extends Ticket {
+class IssueTicket extends Ticket {
     render() {
         let ticket = this.props.ticket;
         let parent = ticket.parent;
@@ -42,4 +42,4 @@ class JiraTicket extends Ticket {
     }
 }
 
-module.exports = JiraTicket;
+module.exports = IssueTicket;
