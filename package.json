@@ -22,7 +22,7 @@
     "async": "^3.2.0",
     "body-parser": "^1.17.1",
     "config": "^3.3.6",
-    "debug": "^4.3.1",
+    "debug": "^4.3.2",
     "deep-clone-merge": "^1.5.2",
     "express": "^4.15.2",
     "express-react-views": "^0.11.0",
@@ -37,10 +37,10 @@
     "require-main-filename": "^2.0.0"
   },
   "devDependencies": {
-    "ajv": "^8.5.0",
-    "eslint": "^7.27.0",
+    "ajv": "^8.6.2",
+    "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0",
-    "mocha": "^8.4.0",
+    "mocha": "^9.0.2",
     "sinon": "^11.1.1"
   }
 }
