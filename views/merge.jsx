@@ -14,7 +14,7 @@ class Merge extends ReleaseStatus {
                 style={style}
                 target={'merge-' + this.props.merge.id}
                 href={this.props.merge.link}
-                title={'Merge ' + this.props.merge.id} />
+                title={'Merge ' + (this.props.merge.id || 'unkonwn')} />
         );
     }
 }

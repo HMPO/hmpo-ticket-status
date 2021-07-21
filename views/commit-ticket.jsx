@@ -5,7 +5,7 @@ const Ticket = require('./ticket');
 
 class CommitTicket extends Ticket {
     render() {
-        let title = this.props.ticket.title + '\n\n' + this.commits().join('\n\n');
+        let title = this.commits().join('\n\n') || this.props.ticket.title;
 
         return (
             <div className="ticket noticket" style={this.buildStyle()} title={title}>
