@@ -8,6 +8,7 @@ module.exports = function (configData, app) {
     const bodyParser = require('body-parser');
     const hmpoLogger = require('hmpo-logger');
     const logger = require('./lib/logger');
+    const engine = require('./engine');
 
     const routes = {
         auth: require('./routes/auth'),
@@ -19,7 +20,7 @@ module.exports = function (configData, app) {
 
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jsx');
-    app.engine('jsx', require('express-react-views').createEngine());
+    app.engine('jsx', engine.createEngine());
 
     app.use(express.static(__dirname + '/public'));
     app.use(hmpoLogger.middleware());
