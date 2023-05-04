@@ -40,7 +40,7 @@ module.exports = {
         for (let engineName in engines) {
             let engine = engines[engineName];
 
-            if (engine.class && engine.credentials && !engine.credentials.password) {
+            if (engine.class && engine.credentials && !engine.privateToken && !engine.credentials.password) {
                 missingCredentials[engineName] = { username: engine.credentials.username || '' };
             }
             if (engine.class && !engine.credentials && !engine.privateToken && !engine.noCredentials) {
